@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable type="com.wenull.meetcrypt_students.data.auth.PhoneAuthViewModel"
+            name="viewmodel"/>
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui.fragments.auth.IntroFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="170dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_intro_phone_auth"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:gravity="center"
+                >
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hi there!"
+                    android:gravity="bottom|center_horizontal"
+                    android:textColor="@android:color/black"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textSize="20sp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="#E6000000"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:minLines="4"
+                    style="@style/Widget.MaterialComponents.TextView"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="This is an initiative to stop spammers\n form disrupting virtual meetings.Please\n create an account or login to help us help \nothers."
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+                    <Button
+                        android:id="@+id/proceed"
+                        android:textAllCaps="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proceed"
+                        android:paddingLeft="70dp"
+                        android:background="@drawable/btn_style"
+                        android:textColor="@android:color/white"
+                        style="@style/Widget.AppCompat.Button"
+                        android:paddingRight="70dp"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>

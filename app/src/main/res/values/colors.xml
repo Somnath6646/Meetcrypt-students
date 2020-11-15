@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#3F3F3F</color>
+    <color name="colorAccent">#3F3F3F</color>
+    <color name="otp_dash_unfocused">#803F3F3F</color>
+</resources>
