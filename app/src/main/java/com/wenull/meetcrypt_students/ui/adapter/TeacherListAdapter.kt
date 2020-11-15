@@ -73,19 +73,15 @@ class TeacherListAdapter(private val viewModel: MainViewModel): RecyclerView.Ada
 
 }
 
-
-
-
-
-
-class TeacherListViewHolder(private val binding: TeacherListLayoutBinding): RecyclerView.ViewHolder(binding.root){
-    fun bind(teacher: Teacher, viewModel: MainViewModel){
+class TeacherListViewHolder(private val binding: TeacherListLayoutBinding): RecyclerView.ViewHolder(binding.root) {
+    fun bind(teacher: Teacher, viewModel: MainViewModel) {
         binding.teacherUsername.text = teacher.username
-        binding.followUnfollowBtn.text = if(teacher.status == STATUS.FOLLOWING) "Unfollow" else "Follow"
+        binding.followUnfollowBtn.text =
+            if (teacher.status == STATUS.FOLLOWING) "Unfollow" else "Follow"
         binding.followUnfollowBtn.setOnClickListener {
-            if(teacher.status == STATUS.FOLLOWING){
+            if (teacher.status == STATUS.FOLLOWING) {
                 viewModel.unfollow(teacher)
-            }else{
+            } else {
                 viewModel.follow(teacher)
             }
         }

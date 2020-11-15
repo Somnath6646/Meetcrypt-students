@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "24771733183-1f1r8mf6ckkm3vgnnda78gidv94nsbhd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wenull.meetcrypt",
+            "certificate_hash": "d72be2c4286dd7ded56b0eefbed301c769e119d4"
+          }
+        },
+        {
           "client_id": "24771733183-n4s79p6pu16clqthvm9kqv3j423si2d8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -51,6 +59,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "24771733183-jv26eo3tm94rae2cjl8cdcuc5hbage9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wenull.meetcrypt_students",
+            "certificate_hash": "a5b1c14c9c16c1ab3b47d444a0485fbe3f23b3d6"
+          }
+        },
         {
           "client_id": "24771733183-kr5ga02ihp2mccfo5nq5n5cgdh8ouf5b.apps.googleusercontent.com",
           "client_type": 1,
