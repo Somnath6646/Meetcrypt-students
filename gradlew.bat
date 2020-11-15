@@ -1,75 +1,84 @@
-package com.wenull.meetcrypt.data.main
+@if "%DEBUG%" == "" @echo off
+@rem ##########################################################################
+@rem
+@rem  Gradle startup script for Windows
+@rem
+@rem ##########################################################################
 
-import android.content.SharedPreferences
-import android.util.Log
-import android.widget.RadioGroup
-import androidx.databinding.Bindable
-import androidx.databinding.Observable
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.ktx.Firebase
-import com.wenull.meetcrypt.data.firebase.FireBaseSourceCallBackListener
-import com.wenull.meetcrypt.data.firebase.FirebaseSource
-import com.wenull.meetcrypt.utils.helpers.Event
-import com.wenull.meetcrypt.utils.ObjectSerializer
-import com.wenull.meetcrypt.utils.RandomNames
-import com.wenull.meetcrypt.utils.models.Event_cache
-import com.wenull.meetcrypt.utils.models.Follower
-import com.wenull.meetcrypt.utils.models.TeacherCredentials
+@rem Set local scope for the variables with windows NT shell
+if "%OS%"=="Windows_NT" setlocal
 
+set DIRNAME=%~dp0
+if "%DIRNAME%" == "" set DIRNAME=.
+set APP_BASE_NAME=%~n0
+set APP_HOME=%DIRNAME%
 
-class MainViewModel(private val firebaseSource: FirebaseSource,
-                    private val sharedPreferences: SharedPreferences
-) : ViewModel(), Observable,
-    FireBaseSourceCallBackListener {
+@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+set DEFAULT_JVM_OPTS=
 
+@rem Find java.exe
+if defined JAVA_HOME goto findJavaFromJavaHome
 
+set JAVA_EXE=java.exe
+%JAVA_EXE% -version >NUL 2>&1
+if "%ERRORLEVEL%" == "0" goto init
 
-    @Bindable
-    val eventName = MutableLiveData<String>()
+echo.
+echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+echo.
+echo Please set the JAVA_HOME variable in your environment to match the
+echo location of your Java installation.
 
-    @Bindable
-    val checkedClass = MutableLiveData<Int>()
+goto fail
 
-    val followerList: MutableLiveData<ArrayList<Follower>> =  MutableLiveData<ArrayList<Follower>>()
+:findJavaFromJavaHome
+set JAVA_HOME=%JAVA_HOME:"=%
+set JAVA_EXE=%JAVA_HOME%/bin/java.exe
 
-    val isEventOn: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
+if exist "%JAVA_EXE%" goto init
 
-    var participantList: ArrayList<Follower> = ArrayList()
+echo.
+echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
+echo.
+echo Please set the JAVA_HOME variable in your environment to match the
+echo location of your Java installation.
 
-    var randomNames: HashMap<String, String> = HashMap<String, String>()
+goto fail
 
+:init
+@rem Get command-line arguments, handling Windows variants
 
-    val teacherCredentials: TeacherCredentials = ObjectSerializer.deserialize(sharedPreferences.getString("Teacher'sCredential", "")) as TeacherCredentials
+if not "%OS%" == "Windows_NT" goto win9xME_args
 
+:win9xME_args
+@rem Slurp the command line arguments.
+set CMD_LINE_ARGS=
+set _SKIP=2
 
-    private val indications = MutableLiveData<Event<String>>()
+:win9xME_args_slurp
+if "x%~1" == "x" goto execute
 
-    val message: LiveData<Event<String>>
-        get() = indications
+set CMD_LINE_ARGS=%*
 
-    private val mAuth by lazy {
-        FirebaseAuth.getInstance()
-    }
+:execute
+@rem Setup the command line
 
-    init {
-        firebaseSource.setFireBaseCallBackListener(this)
-        followerList.value = ArrayList()
-    }
+set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
 
-    fun updateList(){
-        firebaseSource.followerList()
-    }
+@rem Execute Gradle
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %CMD_LINE_ARGS%
 
-    fun checkForEvent(){
-        firebaseSource.getEventOnRestart()
-    }
+:end
+@rem End local scope for the variables with windows NT shell
+if "%ERRORLEVEL%"=="0" goto mainEnd
 
-    fun <T> MutableLiveData<T>.notifyObserver() {
-        this.value = this.value
-    }
+:fail
+rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
+rem the _cmd.exe /c_ return code!
+if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
+exit /b 1
 
-    f
+:mainEnd
+if "%OS%"=="Windows_NT" endlocal
+
+:omega

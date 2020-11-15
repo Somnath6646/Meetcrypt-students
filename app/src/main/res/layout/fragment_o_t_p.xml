@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name="viewModel"
             type="com.wenull.meetcrypt_students.data.auth.PhoneAuthViewModel" />
     </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         tools:context=".ui.fragments.auth.OTPFragment">
 
-        <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
             android:background="@color/colorPrimary"
-            android:gravity="center">
-
+            android:gravity="center"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp">
+                android:layout_marginTop="@dimen/illustration_margin_top">
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="170dp"
+                    android:layout_height="@dimen/size_200dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_phone_auth_enter"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -45,17 +45,17 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal|center_vertical"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="@dimen/padding_layout_fragments">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|bottom"
-                    android:text="Enter OTP"
                     android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="center_horizontal|bottom"
                     android:padding="10dp"
+                    android:text="@string/enter_otp"
                     android:textColor="@android:color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -63,67 +63,68 @@
                 <com.wenull.meetcrypt_students.ui.customviews.OtpEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:text="@={viewModel.otp}"
                     android:layout_margin="10dp"
                     android:maxLength="6"
-                    android:textSize="16dp" />
-
+                    android:padding="15dp"
+                    android:text="@={viewModel.otp}"
+                    android:textSize="@dimen/otp_text_view" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Please fill in the otp sent to "
-                            />
+                            android:text="@string/info_otp_please_fill_in_the_otp_sent_to" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@={viewModel.phoneNumber}"
-                            />
+                            android:text="@={viewModel.phoneNumber}" />
                     </LinearLayout>
 
-
                 </LinearLayout>
-
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:layout_weight="1"
                     android:gravity="center"
-                    >
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/padding_12dp">
+
                     <Button
                         android:id="@+id/proceed_otp"
-                        android:background="@drawable/btn_style"
-                        android:textAllCaps="false"
-                        android:paddingLeft="70dp"
-                        android:paddingRight="70dp"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="@android:color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Proceed" />
+                        android:background="@drawable/btn_style"
+                        android:paddingLeft="@dimen/padding_intro_buttons"
+                        android:paddingRight="@dimen/padding_intro_buttons"
+                        android:text="@string/proceed_button"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
                 </LinearLayout>
 
             </LinearLayout>
+
         </LinearLayout>
+
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@android:color/transparent"
-            />
+            android:src="@android:color/transparent" />
+
     </LinearLayout>
+
 </layout>

@@ -1,3 +1,37 @@
 <resources>
     <string name="app_name">Meetcrypt-students</string>
+
+    <string name="action_bar_title">Meetcrypt</string>
+
+    <string name="tab_name_events">Meetings</string>
+    <string name="tab_name_followers">Followers</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="intro_greeting">Hi there!</string>
+    <string name="intro_info">This is an initiative to stop spammers form disrupting virtual meetings. Please create an account or login to help us help others.</string>
+
+    <string name="phone_number_info">meetcrypt will send you an OTP to continue. Data charges may apply.</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="verify_button">Verify</string>
+    <string name="proceed_button">Proceed</string>
+    <string name="info_otp_please_fill_in_the_otp_sent_to">Please fill in the OTP sent to: </string>
+    <string name="end_meeting">End Meeting</string>
+    <string name="event_participants">Participants:</string>
+    <string name="on_going_event">On Going Meeting</string>
+    <string name="enter_credentials">Enter your details</string>
+    <string name="text_continue">Continue</string>
+    <string name="text_class">Class</string>
+    <string name="_9">9</string>
+    <string name="_10">10</string>
+    <string name="_11">11</string>
+    <string name="_12">12</string>
+    <string name="new_meeting">New Meeting</string>
+    <string name="start">Start</string>
+    <string name="name">Name</string>
+    <string name="enter_otp">Enter OTP</string>
+
+    <string name="text_no_connectivity">No Connection</string>
+    <string name="text_connectivity">Back Online</string>
+
 </resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Padding -->
+    <dimen name="intro_info_padding">24dp</dimen>
+    <dimen name="padding_intro_buttons">70dp</dimen>
+    <dimen name="padding_layout_fragments">15dp</dimen>
+    <dimen name="padding_botton_buttons_phone_auth_frag_1_n_2">12dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_18dp">18dp</dimen>
+    <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="padding_4dp">4dp</dimen>
+    <dimen name="padding_48dp">48dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+
+    <!-- Text size -->
+    <dimen name="text_size_22sp">22sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="otp_text_view">16sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="size_7dp">7dp</dimen>
+    <dimen name="size_8dp">8dp</dimen>
+    <dimen name="size_20dp">20dp</dimen>
+    <dimen name="size_200dp">200dp</dimen>
+    <dimen name="size_40dp">40dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_18dp">18dp</dimen>
+    <dimen name="illustration_margin_top">80dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_15dp">15dp</dimen>
+    <dimen name="margin_7pt5dp">7.5dp</dimen>
+
+</resources>
